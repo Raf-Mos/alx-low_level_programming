@@ -3,6 +3,8 @@
 /**
  * print_line - function that draws a straight line
  *
+ * @n: input
+ *
  * Return: void
  */
 
