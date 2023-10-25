@@ -6,9 +6,12 @@
  *			otherwise return 0.
  *
  * @n: input number
+ * @i: input start point
  *
  * Return: 1 if prime else 0
  */
+
+int prime_nbr(int n, int i);
 
 int is_prime_number(int n)
 {
