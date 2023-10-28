@@ -13,37 +13,28 @@
 
 int main(int argc, char **argv)
 {
-	int sum = 0;
-	int money = atoi(argv[1]);
-
 	if (argc == 2)
 	{
-		if (money > 0)
+	int i, coins = 0;
+	int money = atoi(argv[1]);
+	int cents[] = {25, 10, 5, 2, 1};
+
+	for (i = 0; i < 5; i++)
+	{
+		if (money >= cents[i])
 		{
-			sum = sum + (money / 25);
-			if (money % 25 != 0)
-			{
-				sum = sum + ((money % 25) / 10);
-				if (money % 10 != 0)
-				{
-					sum = sum + ((money % 10) / 5);
-					if (money % 5 != 0)
-					{
-						sum = sum + ((money % 5) / 2);
-						if (money % 2 != 0)
-							sum = sum + (money % 2);
-					}
-			
-				}
-		
-			}
+			coins += money / cents[i];
+			money = money % cents[i];
+			if (money == 0)
+				break;
 		}
 	}
+	printf("%d\n", coins);
+	}	
 	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", sum);
 	return (0);
 }
