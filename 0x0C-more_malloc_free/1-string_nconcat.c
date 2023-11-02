@@ -13,16 +13,16 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int i, j, s1_len = 0, s2_len = 0;
+	unsigned int i, j, s1_len, s2_len;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1_len != '\0')
+	while (s1[s1_len] != '\0')
 		s1_len++;
-	while (s2_len != '\0')
+	while (s2[s2_len] != '\0')
 		s2_len++;
 
 	str = malloc(s1_len + n + 1);
