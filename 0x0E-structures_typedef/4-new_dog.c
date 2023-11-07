@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
@@ -12,7 +13,7 @@ int _strlen(char *str)
 {
 	int len = 0;
 
-	while (str)
+	while (*str++)
 		len++;
 
 	return (len);
@@ -28,9 +29,9 @@ int _strlen(char *str)
 
 char *_strcopy(char *dest, char *src)
 {
-	int i = 0;
+	int i;
 
-	for (; src[i] ; i++)
+	for (i = 0; src[i] ; i++)
 		dest[i] = src[i];
 
 	dest[i] = '\0';
@@ -52,22 +53,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
 
-	if (name == NULL || age < 0 || owner == NULL)
+	if (!name || age < 0 || !owner)
 		return (NULL);
 
-	dog = malloc(sizeof(dog_t));
+	dog = (dog_t *) malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
 
 	dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (dog->name == NULL)
+	if ((*dog).name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
 
 	dog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (dog->owner == NULL)
+	if ((*dog).owner == NULL)
 	{
 		free(dog->name);
 		free(dog);
