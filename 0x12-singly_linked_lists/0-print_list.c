@@ -1,10 +1,11 @@
-#include "list.h"
+#include "lists.h"
+
 
 /**
- * print_list - prints the linked lists
- * @h: head list
+ * print_list - prints a linked lists
+ * @h: list head
  *
- * Return: list size
+ * Return: size of list
  */
 
 size_t print_list(const list_t *h)
@@ -18,24 +19,4 @@ size_t print_list(const list_t *h)
 		i++;
 	}
 	return (i);
-}
-
-/**
- * _strlen - returns string length
- * @s: string
- *
- * Return: length
- */
-int _strlen(char *s)
-{
-        int i = 0;
-
-        if (!s)
-                return (0);
-        while (*s)
-        {
-                *s++;
-                i++;
-        }
-        return (i);
 }
