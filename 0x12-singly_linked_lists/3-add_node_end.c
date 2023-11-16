@@ -19,7 +19,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (str)
 	{
 		last_node->str = strdup(str);
-		list_t *link = head;
+		list_t *link = *head;
 
 		while (link->next)
 			link = link->next;
