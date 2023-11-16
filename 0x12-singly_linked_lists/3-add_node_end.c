@@ -16,8 +16,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (!head || !last_node)
 		return (NULL);
 
-	if (str)
-	{
 		last_node->str = strdup(str);
 		list_t *link = *head;
 
@@ -25,6 +23,5 @@ list_t *add_node_end(list_t **head, const char *str)
 			link = link->next;
 
 		link->next = last_node;
-	}
 	return (last_node);
 }
