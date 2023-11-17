@@ -9,8 +9,6 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *add_node_end(list_t **head, const char *str)
-{
 	list_t *last_node = malloc(sizeof(list_t));
 	list_t *link = *head;
 
