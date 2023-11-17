@@ -7,31 +7,30 @@
  *
  * Return: last node
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *last_node = malloc(sizeof(list_t));
-	list_t *link = *head;
+	list_t *new_node = malloc(sizeof(list_t));
+	list_t *node = *head;
 
-	if (!head || !last_node)
+	if (!head || !new_node)
 		return (NULL);
 	if (str)
 	{
-		last_node->str = strdup(str);
-		if (!last_node->str)
+		new_node->str = strdup(str);
+		if (!new_node->str)
 		{
-			free(last_node);
+			free(new_node);
 			return (NULL);
 		}
-		last_node->len = _strlen(last_node->str);
+		new_node->len = _strlen(new_node->str);
 	}
 	if (node)
 	{
-		while (link->next)
-			link = link->next;
-		link->next = last_node;
+		while (node->next)
+			node = node->next;
+		node->next = new_node;
 	}
 	else
-		*head = last_node;
-	return (last_node);
+		*head = new_node;
+	return (new_node);
 }
