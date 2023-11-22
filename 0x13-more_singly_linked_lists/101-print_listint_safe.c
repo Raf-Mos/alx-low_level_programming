@@ -10,7 +10,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *node1 = head, *node2;
-	size_t i = 0;
+	size_t i = 1;
 
 	while (node1)
 	{
