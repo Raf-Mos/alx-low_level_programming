@@ -9,7 +9,7 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node1 = head;
+	const listint_t *node1 = head, *node2;
 	size_t i = 0;
 
 	while (node1)
@@ -17,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)node1, node1->n);
 		i++;
 
-		const listint_t *node2 = head;
+		node2 = head;
 
 		while (node2 && node2 != node1)
 		{
