@@ -6,7 +6,7 @@
  *
  * Return: void
  */
- 
+
 void print_binary(unsigned long int n)
 {
 	int i = sizeof(n) * 8, j = 0;

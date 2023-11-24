@@ -9,7 +9,7 @@
  *
  * Return: number of bits to flip
  */
- 
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned long int xor_v = n ^ m;
