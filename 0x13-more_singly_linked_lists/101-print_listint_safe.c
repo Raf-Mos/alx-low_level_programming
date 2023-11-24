@@ -32,7 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 		i++;
 		n1 = n1->next;
 	}
-	free(n1);
-	free(n2);
+	n1 = NULL;
+	n2 = NULL;
 	return (i);
 }
