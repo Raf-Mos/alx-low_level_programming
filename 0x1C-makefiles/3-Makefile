@@ -11,10 +11,10 @@ all: ${OBJ} ${SRC}
 %.o: %.c
 	${CC} -c -o $@ $<
 
-clean: $(NAME)
+clean:
 	$(RM) *~ $(NAME)
 
-oclean: $(OBJ)
+oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
