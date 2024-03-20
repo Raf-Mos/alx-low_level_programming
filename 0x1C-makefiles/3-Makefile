@@ -15,7 +15,7 @@ clean: $(NAME)
 	$(RM) *~ $(NAME)
 
 oclean: $(OBJ)
-	$(RM) *~ $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
