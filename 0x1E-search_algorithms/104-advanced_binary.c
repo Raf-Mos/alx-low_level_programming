@@ -27,10 +27,14 @@ int advanced_binary(int *array, size_t size, int value)
 		half_size--;
 
 	if (value == array[half_size])
+	{
+		if (half_size > 0)
+			return (advanced_binary(array, half_size + 1, value));
 		return (half_size);
+	}
 
 	if (value < array[half_size])
-		return (advanced_binary(array, half_size, value));
+		return (advanced_binary(array, half_size + 1, value));
 
 	half_size++;
 
@@ -41,3 +45,4 @@ int advanced_binary(int *array, size_t size, int value)
 		return (-1);
 
 	return (index);
+}
